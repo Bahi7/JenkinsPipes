@@ -1,4 +1,4 @@
-pipeline {
+node {
 agent any
 tools {
 maven 'MVN3'
@@ -6,6 +6,10 @@ jdk 'JDK11'
 }
 stages{
 stage ('Build'){
+steps {
+bat 'mvn install'
+}
+stage ('test'){
 steps {
 bat 'mvn install'
 }
